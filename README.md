@@ -1,2 +1,3 @@
-pollux
+Pollux
 ======
+Software layer for Castor interface.
