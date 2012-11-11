@@ -6,6 +6,12 @@ var Castor = require('./castor');
 var TicketCounter = require('./ticketcounter');
 
 
+
+console.log('\r\n\r\n');
+console.log('Welcome to POLLUX');
+console.log('-----------------');
+
+
 var castor = new Castor();
 var knapp = new Knapp(castor);
 var tickets = new TicketCounter();
@@ -21,15 +27,15 @@ var http = new Http();
 
 
 
-process.stdin.resume();
-process.stdin.setEncoding('ascii');
-console.log('Welcome to CASTOR. Begin commands with /');
+
 //process.stdout.write("\u001b[36m");
 
 
 
 
 
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
 
 process.stdin.on('data', function (chunk) {
 
@@ -102,7 +108,7 @@ process.stdin.on('data', function (chunk) {
 	} else {
 		
 		
-		castor.process(chunk);
+		//castor.process(chunk);
 		
 		
 	}
@@ -153,15 +159,15 @@ http.on('update', function (command, param) {
 
 // CASTOR
 
-castor.on('io', function (msg) {
-	knapp.updateButtons(msg);
+castor.on('io', function (samples, source) {
+	if (source == "013a20407940d8") knapp.updateButtons(samples[0]);
 });
 
-
+/*
 castor.on('voltage', function (msg) {
 	console.log('Voltage received: ' + msg);
 });
-
+*/
 
 
 
@@ -169,17 +175,29 @@ castor.on('voltage', function (msg) {
 
 knapp.on('pressed', function (button) {
 	console.log("Button " + button + " pressed.");
-	tickets.start();
-	if (button == 6) {
-		tickets.toggle(0);
-		knapp.lights(0);
-		Sound.play(1);
+//	tickets.start();
+	if (button == 3) {
+//		tickets.toggle(0);
+		knapp.light(0, true);
+		knapp.light(1, false);
+		knapp.light(2, false);
+//		Sound.play("1");
 	}
-	if (button == 7) {
-		tickets.toggle(1);
-		knapp.lights(0);
-		Sound.play(2);
+	if (button == 5) {
+//		tickets.toggle(1);
+		knapp.light(0, false);
+		knapp.light(1, true);
+		knapp.light(2, false);
+//		Sound.play("2");
 	}
+	
+	if (button == 4) {
+		knapp.light(0, false);
+		knapp.light(1, false);
+		knapp.light(2, true);
+//		knapp.light(4);
+	}
+	
 });
 
 
@@ -187,10 +205,6 @@ knapp.on('released', function (button) {
 	console.log("Button " + button + " released.");
 });
 
-
-knapp.on('hold', function (button, time) {
-	
-});
 
 
 
@@ -208,6 +222,10 @@ tickets.on('ended', function (side) {
 
 tickets.on('toggled', function (side) {
 	console.log('Toggled to team ' + side);
+});
+
+tickets.on('update', function (time) {
+	console.log("Team A: " + time[0] + " Team B: " + time[1]);
 });
 
 

@@ -20,9 +20,9 @@ Knapp.prototype.reset = function () {
 }
 
 
-Knapp.prototype.light = function (a) {
-	transmitter.send('L03412');
-	console.log ("Change lights to " + a.toString(2));	
+Knapp.prototype.light = function (pin, state) {
+	transmitter.setOutput(pin, state);
+	console.log ("Change light " + pin + " to " + state);	
 }
 
 Knapp.prototype.lightsOff = function () {
@@ -34,7 +34,6 @@ Knapp.prototype.lightsOff = function () {
 
 Knapp.prototype.updateButtons = function (a) {
 	var self = this;
-	//console.log("Updating button states with dec " + a + " (" + a.toString(2) + ")");
 	var bin = a.toString(2);
 	
 	var newStates = new Array(8);
@@ -49,16 +48,17 @@ Knapp.prototype.updateButtons = function (a) {
 	
 	for (button = 0; button < 8; button++) {
 		if (newStates[button] != buttonStates[button]) {
-			if (newStates[button] == false) self.emit('released', button);
-			if (newStates[button] == true) self.emit('pressed', button);
+			if (newStates[button] == false) {
+				self.emit('released', button);
+			}
+			if (newStates[button] == true) {
+				self.emit('pressed', button);
+			}
 		}
 	}
 	
 	buttonStates = newStates;
 }
-
-
-
 
 
 module.exports = Knapp;

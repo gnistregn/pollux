@@ -3,11 +3,11 @@ var events = require('events').EventEmitter;
 var self;
 var phase = 0;
 var interval;
-
+var defaultTicketCount = 50;
 var ticketCount;
 var tickets;
 
-var warnLimit = 10;
+var warnLimit = 40;
 
 var side = 1;
 
@@ -15,7 +15,7 @@ var side = 1;
 
 function TicketCounter () {
 	
-	ticketCount = 20;
+	ticketCount = defaultTicketCount;
 	tickets = new Array(ticketCount, ticketCount);
 	
 	if (false === (this instanceof TicketCounter)) {
@@ -32,7 +32,7 @@ util.inherits(TicketCounter, events);
 
 function countdown () {
 	tickets[side]--;
-	console.log("tickets: " + tickets);
+	//console.log("tickets: " + tickets);
 	
 	if (tickets[side] == warnLimit) {
 		console.log("Warning! Team " + side + " is down to " + warnLimit + " seconds remaining.");
@@ -41,6 +41,8 @@ function countdown () {
 	if (tickets[side] == 0) {
 		clearInterval(interval);
 		self.emit('ended', side);
+	} else {
+		self.emit('update', tickets);
 	}
 }
 
@@ -67,6 +69,7 @@ TicketCounter.prototype.toggle = function (s) {
 
 
 TicketCounter.prototype.reset = function () {
+	console.log("Tickets reset");
 	clearInterval(interval);
 	tickets[0] = ticketCount;
 	tickets[1] = ticketCount;
