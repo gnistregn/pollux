@@ -3,24 +3,35 @@ var events = require('events').EventEmitter;
 var self;
 var phase = 0;
 var interval;
-var defaultTicketCount = 50;
-var ticketCount;
+//var ticketCount;
 var tickets;
-
-var warnLimit = 40;
-
 var side = 1;
+
+
+// These variables are accessible from outside this object
+// By putting them in an object we can pass them by reference
+var publicVariables = {
+	defaultTicketCount: 240,
+	reset: reset
+}
 
 
 
 function TicketCounter () {
 	
-	ticketCount = defaultTicketCount;
-	tickets = new Array(ticketCount, ticketCount);
+	tickets = new Array(
+		publicVariables.defaultTicketCount, 
+		publicVariables.defaultTicketCount
+	);
+	
 	
 	if (false === (this instanceof TicketCounter)) {
 		return new TicketCounter();
 	}
+	
+	// Make the public variables actually accessible
+	this.publicVariables = publicVariables;
+	
 	events.call(this);
 	self = this;
 };
@@ -34,9 +45,6 @@ function countdown () {
 	tickets[side]--;
 	//console.log("tickets: " + tickets);
 	
-	if (tickets[side] == warnLimit) {
-		console.log("Warning! Team " + side + " is down to " + warnLimit + " seconds remaining.");
-	}
 	
 	if (tickets[side] == 0) {
 		clearInterval(interval);
@@ -47,7 +55,10 @@ function countdown () {
 }
 
 
-
+TicketCounter.prototype.poop = function () {
+//	console.log("POOOP:");
+//	console.log("defaultTicketCount: " + publicVariables.defaultTicketCount);
+}
 
 
 TicketCounter.prototype.start = function () {
@@ -68,27 +79,29 @@ TicketCounter.prototype.toggle = function (s) {
 }
 
 
-TicketCounter.prototype.reset = function () {
+
+TicketCounter.prototype.reset = reset;
+
+function reset () {
 	console.log("Tickets reset");
 	clearInterval(interval);
-	tickets[0] = ticketCount;
-	tickets[1] = ticketCount;
+	tickets[0] = publicVariables.defaultTicketCount;
+	tickets[1] = publicVariables.defaultTicketCount;
+	console.log("Current variables - tickets: " + publicVariables.defaultTicketCount);
 	phase = 0;
 }
 
 
+
 TicketCounter.prototype.setTickets = function (n) {
 	console.log("Tickets > Changed tickets to " + n);
-	ticketCount = n;
-	self.reset();
-}
-
-TicketCounter.prototype.setWarnLimit = function (n) {
-	warnLimit = n;
+	publicVariables.defaultTicketCount = n;
 	self.reset();
 }
 
 
-
+TicketCounter.prototype.getSide = function () {
+	return side;
+}
 
 module.exports = TicketCounter;

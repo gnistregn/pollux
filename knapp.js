@@ -9,7 +9,10 @@ function Knapp (t) {
 		return new Knapp();
 	}
 	events.call(this);
+	
 };
+
+
 
 util.inherits(Knapp, events);
 

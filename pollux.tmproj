@@ -10,7 +10,7 @@
 			<key>filename</key>
 			<string>castor.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T21:27:05Z</date>
+			<date>2012-11-16T10:06:04Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -18,43 +18,49 @@
 			<key>filename</key>
 			<string>admin.html</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T20:13:12Z</date>
+			<date>2012-11-15T16:58:23Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>http.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T20:04:51Z</date>
+			<date>2012-11-16T10:06:03Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>gamemode.js</string>
+			<key>lastUsed</key>
+			<date>2012-11-16T10:02:59Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>index.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T21:27:05Z</date>
+			<date>2012-11-16T10:06:04Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>knapp.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T19:49:27Z</date>
+			<date>2012-11-16T08:44:15Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>README.md</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T20:13:11Z</date>
+			<date>2012-11-16T09:40:19Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>sound.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T20:16:58Z</date>
+			<date>2012-11-16T09:40:16Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>ticketcounter.js</string>
 			<key>lastUsed</key>
-			<date>2012-11-10T20:04:49Z</date>
+			<date>2012-11-16T09:24:24Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -80,9 +86,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>46</integer>
+				<integer>10</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -94,44 +100,42 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>29</integer>
+				<integer>41</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>102</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>74</integer>
+		</dict>
+		<key>gamemode.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>15</integer>
+			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>27</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>29</integer>
-				<key>line</key>
-				<integer>1</integer>
-			</dict>
 		</dict>
 		<key>http.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>48</integer>
+				<integer>87</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>9</integer>
+			<integer>48</integer>
 		</dict>
 		<key>index.js</key>
 		<dict>
@@ -140,37 +144,21 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>29</integer>
+				<integer>254</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>24</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>35</integer>
-				<key>line</key>
-				<integer>31</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>29</integer>
-			</dict>
+			<integer>249</integer>
 		</dict>
 		<key>knapp.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>23</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -182,28 +170,44 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>19</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>1</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>41</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>19</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
 		</dict>
 		<key>ticketcounter.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>44</integer>
+				<integer>15</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>11</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -212,6 +216,7 @@
 		<string>admin.html</string>
 		<string>castor.js</string>
 		<string>index.js</string>
+		<string>gamemode.js</string>
 		<string>README.md</string>
 		<string>sound.js</string>
 		<string>ticketcounter.js</string>
@@ -220,6 +225,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{367, -44}, {998, 810}}</string>
+	<string>{{742, 402}, {1631, 1016}}</string>
 </dict>
 </plist>

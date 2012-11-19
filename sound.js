@@ -2,6 +2,7 @@ var exec = require("child_process").exec;
 var queueOffset = 0;
 
 function playIncoming (n) {
+	console.log("Sound command incoming, queueOffset " + queueOffset);
 	if (n instanceof Array) {
 		queueOffset = 0;
 		queue(n);
@@ -21,6 +22,7 @@ function queue (n) {
 	exec("afplay sounds/" + n[queueOffset] + ".wav", function (error, stdout, stderr) {
 		queueOffset++;
 		if (queueOffset < n.length) queue(n);	
+		else queueOffset = 0;
 	});
 	
 }
